@@ -1,0 +1,4 @@
+pandas=2.2.2
+requests=2.31.0
+json=2.0.9
+HttpNegotiateAuth=0.5.2
