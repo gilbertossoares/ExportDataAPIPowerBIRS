@@ -21,17 +21,17 @@ for id in ids:
     object = json.loads(response.text)
     datasources= pd.concat([pd.json_normalize(object['value']),datasources],ignore_index=True)
 
-#Load dataset politicies
-politicies = pd.DataFrame()
+#Load dataset policies
+policies = pd.DataFrame()
 for id in ids:
     response = requests.get(url_base+endpoint+'('+id+')'+'/Policies',auth=HttpNegotiateAuth())
     object = json.loads(response.text)
     df_temp = pd.json_normalize(object['Policies'])
     df_temp['id'] = id
-    politicies = pd.concat([politicies, df_temp], ignore_index=True)
+    policies = pd.concat([policies, df_temp], ignore_index=True)
 
 
 #Export datasets
-politicies.to_csv('politicies.csv', index=False)
+policies.to_csv('policies.csv', index=False)
 reports.to_csv('reports.csv', index=False)
 datasources.to_csv('datasources.csv', index=False)
