@@ -32,6 +32,6 @@ for id in ids:
 
 
 #Export datasets
-politicies.to_csv('politicies.csv')
-reports.to_csv('reports.csv')
-datasources.to_csv('datasources.csv')
+politicies.to_csv('politicies.csv', index=False)
+reports.to_csv('reports.csv', index=False)
+datasources.to_csv('datasources.csv', index=False)
